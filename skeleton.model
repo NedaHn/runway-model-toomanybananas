@@ -35,14 +35,20 @@ rule step for state in roommates {
           state = GoingToStore;
         }
       } else {
-        bananas -= 1;
-        state = Happy;
+        if (bananas==1){
+          notePresent=True;
+          state=GoingToStore
+        }
+        else {
+          bananas -= 1;
+          state = Happy;
+        }
       }
     }
 
     GoingToStore {
       state = ReturningFromStore {
-        carrying: urandomRange(2, 8)
+        carrying: urandomRange(1, 8)
       };
     }
 
