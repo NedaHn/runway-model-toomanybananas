@@ -28,21 +28,15 @@ rule step for state in roommates {
 
     Hungry {
       if bananas == 0 {
-        if (notePresent ) {
+        if (notePresent) {
           // Roommate at store: try again later
         } else {
           notePresent = True;
           state = GoingToStore;
         }
       } else {
-        if (bananas==1){
-          notePresent=True;
-          state=GoingToStore
-        }
-        else {
-          bananas -= 1;
-          state = Happy;
-        }
+        bananas -= 1;
+        state = Happy;
       }
     }
 
