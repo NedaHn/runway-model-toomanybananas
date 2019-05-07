@@ -48,7 +48,7 @@ rule step for state in roommates {
 
     GoingToStore {
       state = ReturningFromStore {
-        carrying: urandomRange(1, 8)
+        carrying: urandomRange(2, 8)
       };
     }
 
