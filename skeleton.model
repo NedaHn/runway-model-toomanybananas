@@ -24,9 +24,11 @@ rule step for state in roommates {
   match state {
     Happy {
       state = Hungry;
-      if (bananas==0 and notePresent)
+      if (bananas==0)
       {
-          state=GoingToStore
+          if (notePresent){
+            state=GoingToStore
+          }
       }
     }
 
